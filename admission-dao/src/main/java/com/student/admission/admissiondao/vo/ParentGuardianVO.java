@@ -30,6 +30,7 @@ public class ParentGuardianVO {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, String pdob, String pContactDetails,
 			Map<String, Object> additionalProperties) {
 		super();

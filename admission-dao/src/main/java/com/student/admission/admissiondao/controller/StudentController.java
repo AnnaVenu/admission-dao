@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.student.admission.admissiondao.service.StudentService;
-import com.student.admission.admissiondao.vo.ParentGuardianVO;
 import com.student.admission.admissiondao.vo.StudentVO;
 
 @RestController

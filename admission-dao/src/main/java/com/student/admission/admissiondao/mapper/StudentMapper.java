@@ -7,7 +7,6 @@ import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 import com.student.admission.admissiondao.entity.Student;
-import com.student.admission.admissiondao.vo.ParentGuardianVO;
 import com.student.admission.admissiondao.vo.StudentVO;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
@@ -31,6 +30,7 @@ public interface StudentMapper {
 			@Mapping(target = "parentDetails", expression = "java(studentVO.getParentDetails())"),//.toString()
 			@Mapping(target = "sAddress" , source="studentVO.sAddress"),
 			@Mapping(target = "identificationMarks" , source="studentVO.identificationMarks")
+	
 			// List of String identification and address &parent class details
 
 	})

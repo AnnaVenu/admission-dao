@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.student.admission.admissiondao.entity.Student;
 import com.student.admission.admissiondao.mapper.StudentMapper;
 import com.student.admission.admissiondao.repository.StudentRepository;
-import com.student.admission.admissiondao.vo.ParentGuardianVO;
 import com.student.admission.admissiondao.vo.StudentVO;
 
 @Service

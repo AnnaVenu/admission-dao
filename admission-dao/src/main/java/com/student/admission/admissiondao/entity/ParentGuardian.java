@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 @Embeddable
 public class ParentGuardian {
 
+	
 	@Column(name = "P_FIRSTNAME")
 	private String pFirstName;
 	@Column(name = "P_LASTNAME")

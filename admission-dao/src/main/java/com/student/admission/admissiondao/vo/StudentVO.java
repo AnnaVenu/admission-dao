@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 		"sAddress", "parentDetails" })
 public class StudentVO implements Serializable {
 
+	
 	@JsonProperty("sid")
 	private int sid;
 	@JsonProperty("sFirstName")

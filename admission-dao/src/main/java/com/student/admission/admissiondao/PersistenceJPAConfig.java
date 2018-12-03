@@ -32,6 +32,7 @@ public class PersistenceJPAConfig {
 		return dataSource;
 	}
 
+	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(Environment env) {
 		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();

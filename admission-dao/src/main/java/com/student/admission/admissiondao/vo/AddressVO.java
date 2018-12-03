@@ -35,6 +35,7 @@ public class AddressVO implements Serializable {
 	/**
 	 * No args constructor for use in serialization
 	 * 
+	 * 
 	 */
 	public AddressVO() {
 	}
