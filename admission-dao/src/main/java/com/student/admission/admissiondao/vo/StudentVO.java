@@ -13,42 +13,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "firstName", "lastName", "fatherName", "motherName", "gender", "dob", "classType", "section",
-		"rollNo", "admissionDate", "religion", "admissionNumber", "nationality", "identificationMarks", "address","parentDetails" })
+@JsonPropertyOrder({ "sid", "sFirstName", "sLastName", "sFatherName", "sMotherName", "sGender", "sDob", "sClassType",
+		"sSection", "sRollNo", "sAdmissionDate", "sReligion", "sAdmissionNumber", "sNationality", "identificationMarks",
+		"sAddress", "parentDetails" })
 public class StudentVO implements Serializable {
 
-	@JsonProperty("id")
-	private int id;
-	@JsonProperty("firstName")
-	private String firstName;
-	@JsonProperty("lastName")
-	private String lastName;
-	@JsonProperty("fatherName")
-	private String fatherName;
-	@JsonProperty("motherName")
-	private String motherName;
-	@JsonProperty("gender")
-	private String gender;
-	@JsonProperty("dob")
-	private String dob;
-	@JsonProperty("classType")
-	private String classType;
-	@JsonProperty("section")
-	private String section;
-	@JsonProperty("rollNo")
-	private String rollNo;
-	@JsonProperty("admissionDate")
-	private String admissionDate;
-	@JsonProperty("religion")
-	private String religion;
-	@JsonProperty("admissionNumber")
-	private String admissionNumber;
-	@JsonProperty("nationality")
-	private String nationality;
+	@JsonProperty("sid")
+	private int sid;
+	@JsonProperty("sFirstName")
+	private String sFirstName;
+	@JsonProperty("sLastName")
+	private String sLastName;
+	@JsonProperty("sFatherName")
+	private String sFatherName;
+	@JsonProperty("sMotherName")
+	private String sMotherName;
+	@JsonProperty("sGender")
+	private String sGender;
+	@JsonProperty("sDob")
+	private String sDob;
+	@JsonProperty("sClassType")
+	private String sClassType;
+	@JsonProperty("sSection")
+	private String sSection;
+	@JsonProperty("sRollNo")
+	private String sRollNo;
+	@JsonProperty("sAdmissionDate")
+	private String sAdmissionDate;
+	@JsonProperty("sReligion")
+	private String sReligion;
+	@JsonProperty("sAdmissionNumber")
+	private String sAdmissionNumber;
+	@JsonProperty("sNationality")
+	private String sNationality;
 	@JsonProperty("identificationMarks")
 	private List<String> identificationMarks = null;
-	@JsonProperty("address")
-	private List<AddressVO> address = null;
+	@JsonProperty("sAddress")
+	private List<AddressVO> sAddress = null;
 	@JsonProperty("parentDetails")
 	private ParentGuardianVO parentDetails = null;
 	@JsonIgnore
@@ -81,167 +82,169 @@ public class StudentVO implements Serializable {
 	 * @param firstName
 	 * @param fatherName
 	 */
-	public StudentVO(int id, String firstName, String lastName, String fatherName, String motherName, String gender,
-			String dob, String classType, String section, String rollNo, String admissionDate, String religion,
-			String admissionNumber, String nationality, List<String> identificationMarks, List<AddressVO> address,ParentGuardianVO parentDetails) {
+	public StudentVO(int sid, String sFirstName, String sLastName, String sFatherName, String sMotherName,
+			String sGender, String sDob, String sClassType, String sSection, String sRollNo, String sAdmissionDate,
+			String sReligion, String sAdmissionNumber, String sNationality, List<String> identificationMarks,
+			List<AddressVO> sAddress, ParentGuardianVO parentDetails, Map<String, Object> additionalProperties) {
 		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.fatherName = fatherName;
-		this.motherName = motherName;
-		this.gender = gender;
-		this.dob = dob;
-		this.classType = classType;
-		this.section = section;
-		this.rollNo = rollNo;
-		this.admissionDate = admissionDate;
-		this.religion = religion;
-		this.admissionNumber = admissionNumber;
-		this.nationality = nationality;
+		this.sid = sid;
+		this.sFirstName = sFirstName;
+		this.sLastName = sLastName;
+		this.sFatherName = sFatherName;
+		this.sMotherName = sMotherName;
+		this.sGender = sGender;
+		this.sDob = sDob;
+		this.sClassType = sClassType;
+		this.sSection = sSection;
+		this.sRollNo = sRollNo;
+		this.sAdmissionDate = sAdmissionDate;
+		this.sReligion = sReligion;
+		this.sAdmissionNumber = sAdmissionNumber;
+		this.sNationality = sNationality;
 		this.identificationMarks = identificationMarks;
-		this.address = address;
-		this.parentDetails=parentDetails;
+		this.sAddress = sAddress;
+		this.parentDetails = parentDetails;
+		this.additionalProperties = additionalProperties;
 	}
 
-	@JsonProperty("id")
-	public int getId() {
-		return id;
+	@JsonProperty("sid")
+	public int getSid() {
+		return sid;
 	}
 
-	@JsonProperty("id")
-	public void setId(int id) {
-		this.id = id;
+	@JsonProperty("sid")
+	public void setSid(int sid) {
+		this.sid = sid;
 	}
 
-	@JsonProperty("firstName")
-	public String getFirstName() {
-		return firstName;
+	@JsonProperty("sFirstName")
+	public String getsFirstName() {
+		return sFirstName;
 	}
 
-	@JsonProperty("firstName")
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	@JsonProperty("sFirstName")
+	public void setsFirstName(String sFirstName) {
+		this.sFirstName = sFirstName;
 	}
 
-	@JsonProperty("lastName")
-	public String getLastName() {
-		return lastName;
+	@JsonProperty("sLastName")
+	public String getsLastName() {
+		return sLastName;
 	}
 
-	@JsonProperty("lastName")
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	@JsonProperty("sLastName")
+	public void setsLastName(String sLastName) {
+		this.sLastName = sLastName;
 	}
 
-	@JsonProperty("fatherName")
-	public String getFatherName() {
-		return fatherName;
+	@JsonProperty("sFatherName")
+	public String getsFatherName() {
+		return sFatherName;
 	}
 
-	@JsonProperty("fatherName")
-	public void setFatherName(String fatherName) {
-		this.fatherName = fatherName;
+	@JsonProperty("sFatherName")
+	public void setsFatherName(String sFatherName) {
+		this.sFatherName = sFatherName;
 	}
 
-	@JsonProperty("motherName")
-	public String getMotherName() {
-		return motherName;
+	@JsonProperty("sMotherName")
+	public String getsMotherName() {
+		return sMotherName;
 	}
 
-	@JsonProperty("motherName")
-	public void setMotherName(String motherName) {
-		this.motherName = motherName;
+	@JsonProperty("sMotherName")
+	public void setsMotherName(String sMotherName) {
+		this.sMotherName = sMotherName;
 	}
 
-	@JsonProperty("gender")
-	public String getGender() {
-		return gender;
+	@JsonProperty("sGender")
+	public String getsGender() {
+		return sGender;
 	}
 
-	@JsonProperty("gender")
-	public void setGender(String gender) {
-		this.gender = gender;
+	@JsonProperty("sGender")
+	public void setsGender(String sGender) {
+		this.sGender = sGender;
 	}
 
-	@JsonProperty("dob")
-	public String getDob() {
-		return dob;
+	@JsonProperty("sDob")
+	public String getsDob() {
+		return sDob;
 	}
 
-	@JsonProperty("dob")
-	public void setDob(String dob) {
-		this.dob = dob;
+	@JsonProperty("sDob")
+	public void setsDob(String sDob) {
+		this.sDob = sDob;
 	}
 
-	@JsonProperty("classType")
-	public String getClassType() {
-		return classType;
+	@JsonProperty("sClassType")
+	public String getsClassType() {
+		return sClassType;
 	}
 
-	@JsonProperty("classType")
-	public void setClassType(String classType) {
-		this.classType = classType;
+	@JsonProperty("sClassType")
+	public void setsClassType(String sClassType) {
+		this.sClassType = sClassType;
 	}
 
-	@JsonProperty("section")
-	public String getSection() {
-		return section;
+	@JsonProperty("sSection")
+	public String getsSection() {
+		return sSection;
 	}
 
-	@JsonProperty("section")
-	public void setSection(String section) {
-		this.section = section;
+	@JsonProperty("sSection")
+	public void setsSection(String sSection) {
+		this.sSection = sSection;
 	}
 
-	@JsonProperty("rollNo")
-	public String getRollNo() {
-		return rollNo;
+	@JsonProperty("sRollNo")
+	public String getsRollNo() {
+		return sRollNo;
 	}
 
-	@JsonProperty("rollNo")
-	public void setRollNo(String rollNo) {
-		this.rollNo = rollNo;
+	@JsonProperty("sRollNo")
+	public void setsRollNo(String sRollNo) {
+		this.sRollNo = sRollNo;
 	}
 
-	@JsonProperty("admissionDate")
-	public String getAdmissionDate() {
-		return admissionDate;
+	@JsonProperty("sAdmissionDate")
+	public String getsAdmissionDate() {
+		return sAdmissionDate;
 	}
 
-	@JsonProperty("admissionDate")
-	public void setAdmissionDate(String admissionDate) {
-		this.admissionDate = admissionDate;
+	@JsonProperty("sAdmissionDate")
+	public void setsAdmissionDate(String sAdmissionDate) {
+		this.sAdmissionDate = sAdmissionDate;
 	}
 
-	@JsonProperty("religion")
-	public String getReligion() {
-		return religion;
+	@JsonProperty("sReligion")
+	public String getsReligion() {
+		return sReligion;
 	}
 
-	@JsonProperty("religion")
-	public void setReligion(String religion) {
-		this.religion = religion;
+	@JsonProperty("sReligion")
+	public void setsReligion(String sReligion) {
+		this.sReligion = sReligion;
 	}
 
-	@JsonProperty("admissionNumber")
-	public String getAdmissionNumber() {
-		return admissionNumber;
+	@JsonProperty("sAdmissionNumber")
+	public String getsAdmissionNumber() {
+		return sAdmissionNumber;
 	}
 
-	@JsonProperty("admissionNumber")
-	public void setAdmissionNumber(String admissionNumber) {
-		this.admissionNumber = admissionNumber;
+	@JsonProperty("sAdmissionNumber")
+	public void setsAdmissionNumber(String sAdmissionNumber) {
+		this.sAdmissionNumber = sAdmissionNumber;
 	}
 
-	@JsonProperty("nationality")
-	public String getNationality() {
-		return nationality;
+	@JsonProperty("sNationality")
+	public String getsNationality() {
+		return sNationality;
 	}
 
-	@JsonProperty("nationality")
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
+	@JsonProperty("sNationality")
+	public void setsNationality(String sNationality) {
+		this.sNationality = sNationality;
 	}
 
 	@JsonProperty("identificationMarks")
@@ -254,24 +257,14 @@ public class StudentVO implements Serializable {
 		this.identificationMarks = identificationMarks;
 	}
 
-	@JsonProperty("address")
-	public List<AddressVO> getAddress() {
-		return address;
+	@JsonProperty("sAddress")
+	public List<AddressVO> getsAddress() {
+		return sAddress;
 	}
 
-	@JsonProperty("address")
-	public void setAddress(List<AddressVO> address) {
-		this.address = address;
-	}
-
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
-	}
-
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
+	@JsonProperty("sAddress")
+	public void setsAddress(List<AddressVO> sAddress) {
+		this.sAddress = sAddress;
 	}
 
 	@JsonProperty("parentDetails")
@@ -284,6 +277,16 @@ public class StudentVO implements Serializable {
 		this.parentDetails = parentDetails;
 	}
 
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
+
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+		this.additionalProperties.put(name, value);
+	}
+
 	/*@Override
 	public String toString() {
 		return new ToStringBuilder(this).append("id", id).append("firstName", firstName).append("lastName", lastName)
@@ -292,8 +295,7 @@ public class StudentVO implements Serializable {
 				.append("admissionDate", admissionDate).append("religion", religion)
 				.append("admissionNumber", admissionNumber).append("nationality", nationality)
 				.append("identificationMarks", identificationMarks).append("address", address)
-				.append("parentDetails",parentDetails)
-				.append("additionalProperties", additionalProperties).toString();
+				.append("parentDetails", parentDetails).append("additionalProperties", additionalProperties).toString();
 	}*/
 
 }

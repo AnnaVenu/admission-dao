@@ -1,6 +1,6 @@
 package com.student.admission.admissiondao.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -11,67 +11,69 @@ import javax.persistence.Enumerated;
 public class ParentGuardian {
 
 	@Column(name = "P_FIRSTNAME")
-	private String firstName;
+	private String pFirstName;
 	@Column(name = "P_LASTNAME")
-	private String lastName;
+	private String pLastName;
 	@Enumerated(EnumType.STRING)
-	private Gender gender;
+	@Column(name = "P_GENDER")
+	private Gender pGender;
 	@Column(name = "P_PARENT_DOB")
-	private Date dob;
+	private Timestamp pDob;
 	@Column(name = "P_CONTACT_DETAILS")
-	private String contactDetails;
+	private String pContactDetails;
 
 	public ParentGuardian() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ParentGuardian(String firstName, String lastName, Gender gender, Date dob, String contactDetails) {
+	public ParentGuardian(String pFirstName, String pLastName, Gender pGender, Timestamp pDob, String pContactDetails) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.gender = gender;
-		this.dob = dob;
-		this.contactDetails = contactDetails;
+		this.pFirstName = pFirstName;
+		this.pLastName = pLastName;
+		this.pGender = pGender;
+		this.pDob = pDob;
+		this.pContactDetails = pContactDetails;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getpFirstName() {
+		return pFirstName;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public void setpFirstName(String pFirstName) {
+		this.pFirstName = pFirstName;
 	}
 
-	public Gender getGender() {
-		return gender;
+	public String getpLastName() {
+		return pLastName;
 	}
 
-	public Date getDob() {
-		return dob;
+	public void setpLastName(String pLastName) {
+		this.pLastName = pLastName;
 	}
 
-	public String getContactDetails() {
-		return contactDetails;
+	public Gender getpGender() {
+		return pGender;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setpGender(Gender pGender) {
+		this.pGender = pGender;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public Timestamp getpDob() {
+		return pDob;
 	}
 
-	public void setGender(Gender gender) {
-		this.gender = gender;
+	public void setpDob(Timestamp pDob) {
+		this.pDob = pDob;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public String getpContactDetails() {
+		return pContactDetails;
 	}
 
-	public void setContactDetails(String contactDetails) {
-		this.contactDetails = contactDetails;
+	public void setpContactDetails(String pContactDetails) {
+		this.pContactDetails = pContactDetails;
 	}
+
 }

@@ -9,91 +9,91 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "firstName", "lastName", "gender", "dob", "contactDetails" })
+@JsonPropertyOrder({ "pFirstName", "pLastName", "pGender", "pdob", "pContactDetails" })
 public class ParentGuardianVO {
 
-	@JsonProperty("firstName")
-	private String firstName;
-	@JsonProperty("lastName")
-	private String lastName;
-	@JsonProperty("gender")
-	private String gender;
-	@JsonProperty("dob")
-	private String dob;
-	@JsonProperty("contactDetails")
-	private String contactDetails;
+	@JsonProperty("pFirstName")
+	private String pFirstName;
+	@JsonProperty("pLastName")
+	private String pLastName;
+	@JsonProperty("pGender")
+	private String pGender;
+	@JsonProperty("pdob")
+	private String pdob;
+	@JsonProperty("pContactDetails")
+	private String pContactDetails;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	@SuppressWarnings("unused")
 	private final static long serialVersionUID = -91223310563708934L;
-	
+
 	public ParentGuardianVO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ParentGuardianVO(String firstName, String lastName, String gender, String dob,
-			String contactDetails, Map<String, Object> additionalProperties) {
+	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, String pdob, String pContactDetails,
+			Map<String, Object> additionalProperties) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.gender = gender;
-		this.dob = dob;
-		this.contactDetails = contactDetails;
+		this.pFirstName = pFirstName;
+		this.pLastName = pLastName;
+		this.pGender = pGender;
+		this.pdob = pdob;
+		this.pContactDetails = pContactDetails;
 		this.additionalProperties = additionalProperties;
 	}
 
-	@JsonProperty("id")
-	public String getFirstName() {
-		return firstName;
+	@JsonProperty("pFirstName")
+	public String getpFirstName() {
+		return pFirstName;
 	}
 
-	@JsonProperty("firstName")
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	@JsonProperty("pFirstName")
+	public void setpFirstName(String pFirstName) {
+		this.pFirstName = pFirstName;
 	}
 
-	@JsonProperty("lastName")
-	public String getLastName() {
-		return lastName;
+	@JsonProperty("pLastName")
+	public String getpLastName() {
+		return pLastName;
 	}
 
-	@JsonProperty("lastName")
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	@JsonProperty("pLastName")
+	public void setpLastName(String pLastName) {
+		this.pLastName = pLastName;
 	}
 
-	@JsonProperty("gender")
-	public String getGender() {
-		return gender;
+	@JsonProperty("pGender")
+	public String getpGender() {
+		return pGender;
 	}
 
-	@JsonProperty("gender")
-	public void setGender(String gender) {
-		this.gender = gender;
+	@JsonProperty("pGender")
+	public void setpGender(String pGender) {
+		this.pGender = pGender;
 	}
 
-	@JsonProperty("dob")
-	public String getDob() {
-		return dob;
+	@JsonProperty("pdob")
+	public String getPdob() {
+		return pdob;
 	}
 
-	@JsonProperty("dob")
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
-	@JsonProperty("contactDetails")
-	public String getContactDetails() {
-		return contactDetails;
-	}
-
-	@JsonProperty("contactDetails")
-	public void setContactDetails(String contactDetails) {
-		this.contactDetails = contactDetails;
+	@JsonProperty("pdob")
+	public void setPdob(String pdob) {
+		this.pdob = pdob;
 	}
 
 	@JsonAnyGetter
 	public Map<String, Object> getAdditionalProperties() {
 		return additionalProperties;
+	}
+
+	@JsonProperty("pContactDetails")
+	public String getpContactDetails() {
+		return pContactDetails;
+	}
+
+	@JsonProperty("pContactDetails")
+	public void setpContactDetails(String pContactDetails) {
+		this.pContactDetails = pContactDetails;
 	}
 
 	@JsonAnyGetter

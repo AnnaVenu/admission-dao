@@ -37,7 +37,7 @@ public class PersistenceJPAConfig {
 		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactoryBean.setDataSource(dataSource());
 		entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-		entityManagerFactoryBean.setPackagesToScan("com.student.admission.admissiondao.entity");
+		entityManagerFactoryBean.setPackagesToScan("com.student.admission.admissiondao");
 		entityManagerFactoryBean.setJpaProperties(additionalProperties());
 		return entityManagerFactoryBean;
 

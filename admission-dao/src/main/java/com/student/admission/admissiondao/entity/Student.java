@@ -1,6 +1,6 @@
 package com.student.admission.admissiondao.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -24,49 +24,48 @@ public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
-	private int id;
+	@Column(name = "S_ID")
+	private int sid;
 	@Column(name = "S_FIRSTNAME")
-	private String firstName;
+	private String sFirstName;
 	@Column(name = "S_LASTNAME")
-	private String lastName;
+	private String sLastName;
 	@Column(name = "S_FATHERNAME")
-	private String fatherName;
+	private String sFatherName;
 	@Column(name = "S_MOTHERNAME")
-	private String motherName;
+	private String sMotherName;
 	@Enumerated(EnumType.STRING)
-	@Column(name="S_GENDER")
-	private Gender gender;
+	@Column(name = "S_GENDER")
+	private Gender sGender;
 	@Column(name = "S_DOB")
-	private Date dob;
+	private Timestamp sDob;
 	@Column(name = "S_CLASS")
-	private String classType;
+	private String sClassType;
 	@Column(name = "S_SECTION")
-	private String section;
+	private String sSection;
 	@Column(name = "S_ROLLNO")
-	private String rollNo;
+	private String sRollNo;
 	@Column(name = "S_ADMISSION_DATE")
-	private Date admissionDate;
+	private Timestamp sAdmissionDate;
 	@Enumerated(EnumType.STRING)
-	@Column(name="S_RELIGION")
-	private Religion religion;
+	@Column(name = "S_RELIGION")
+	private Religion sReligion;
 	@Column(name = "S_ADMISSION_NUMBER")
-	private String admissionNumber;
+	private String sAdmissionNumber;
 	@Enumerated(EnumType.STRING)
-	@Column(name="S_NATIONALITY")
-	private Nationality nationality;
+	@Column(name = "S_NATIONALITY")
+	private Nationality sNationality;
 	@ElementCollection(targetClass = String.class)
 	private List<String> identificationMarks;
 	@OneToMany(mappedBy = "student")
-	private List<Address> address;
+	private List<Address> sAddress;
 	@Embedded
 	@Basic(optional = true)
-	@AttributeOverrides({ @AttributeOverride(column = @Column(name = "FIRSTNAME"), name = "firstName"),
-			/*@AttributeOverride(column = @Column(name = "FIRSTNAME"), name = "firstName"),*/
-			@AttributeOverride(column = @Column(name = "LASTNAME"), name = "lastName"),
-			/* @AttributeOverride(column = @Column(name = ""), name = ""), */
-			@AttributeOverride(column = @Column(name = "DOB"), name = "dob"),
-			@AttributeOverride(column = @Column(name = "CONTACT_DETAILS"), name = "contactDetails") })
+	@AttributeOverrides({ @AttributeOverride(column = @Column(name = "P_FIRSTNAME"), name = "pFirstName"),
+			@AttributeOverride(column = @Column(name = "P_LASTNAME"), name = "pLastName"),
+			 @AttributeOverride(column = @Column(name = "P_GENDER"), name = "pGender"), 
+			@AttributeOverride(column = @Column(name = "P_PARENT_DOB"), name = "pDob"),
+			@AttributeOverride(column = @Column(name = "P_CONTACT_DETAILS"), name = "pContactDetails") })
 	private ParentGuardian parentDetails;
 
 	public Student() {
@@ -74,163 +73,164 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(int id, String firstName, String lastName, String fatherName, String motherName, Gender gender,
-			Date dob, String classType, String section, String rollNo, Date admissionDate, Religion religion,
-			String admissionNumber, Nationality nationality, List<String> identificationMarks, List<Address> address,
-			ParentGuardian parentDetails) {
+	public Student(int sid, String sFirstName, String sLastName, String sFatherName, String sMotherName, Gender sGender,
+			Timestamp sDob, String sClassType, String sSection, String sRollNo, Timestamp sAdmissionDate,
+			Religion sReligion, String sAdmissionNumber, Nationality sNationality, List<String> identificationMarks,
+			List<Address> sAddress, ParentGuardian parentDetails) {
 		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.fatherName = fatherName;
-		this.motherName = motherName;
-		this.gender = gender;
-		this.dob = dob;
-		this.classType = classType;
-		this.section = section;
-		this.rollNo = rollNo;
-		this.admissionDate = admissionDate;
-		this.religion = religion;
-		this.admissionNumber = admissionNumber;
-		this.nationality = nationality;
+		this.sid = sid;
+		this.sFirstName = sFirstName;
+		this.sLastName = sLastName;
+		this.sFatherName = sFatherName;
+		this.sMotherName = sMotherName;
+		this.sGender = sGender;
+		this.sDob = sDob;
+		this.sClassType = sClassType;
+		this.sSection = sSection;
+		this.sRollNo = sRollNo;
+		this.sAdmissionDate = sAdmissionDate;
+		this.sReligion = sReligion;
+		this.sAdmissionNumber = sAdmissionNumber;
+		this.sNationality = sNationality;
 		this.identificationMarks = identificationMarks;
-		this.address = address;
+		this.sAddress = sAddress;
 		this.parentDetails = parentDetails;
 	}
 
-	public int getId() {
-		return id;
+	public int getSid() {
+		return sid;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public void setSid(int sid) {
+		this.sid = sid;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getsFirstName() {
+		return sFirstName;
 	}
 
-	public String getFatherName() {
-		return fatherName;
+	public void setsFirstName(String sFirstName) {
+		this.sFirstName = sFirstName;
 	}
 
-	public String getMotherName() {
-		return motherName;
+	public String getsLastName() {
+		return sLastName;
 	}
 
-	public Gender getGender() {
-		return gender;
+	public void setsLastName(String sLastName) {
+		this.sLastName = sLastName;
 	}
 
-	public Date getDob() {
-		return dob;
+	public String getsFatherName() {
+		return sFatherName;
 	}
 
-	public String getClassType() {
-		return classType;
+	public void setsFatherName(String sFatherName) {
+		this.sFatherName = sFatherName;
 	}
 
-	public String getSection() {
-		return section;
+	public String getsMotherName() {
+		return sMotherName;
 	}
 
-	public String getRollNo() {
-		return rollNo;
+	public void setsMotherName(String sMotherName) {
+		this.sMotherName = sMotherName;
 	}
 
-	public Date getAdmissionDate() {
-		return admissionDate;
+	public Gender getsGender() {
+		return sGender;
 	}
 
-	public Religion getReligion() {
-		return religion;
+	public void setsGender(Gender sGender) {
+		this.sGender = sGender;
 	}
 
-	public String getAdmissionNumber() {
-		return admissionNumber;
+	public Timestamp getsDob() {
+		return sDob;
 	}
 
-	public Nationality getNationality() {
-		return nationality;
+	public void setsDob(Timestamp sDob) {
+		this.sDob = sDob;
+	}
+
+	public String getsClassType() {
+		return sClassType;
+	}
+
+	public void setsClassType(String sClassType) {
+		this.sClassType = sClassType;
+	}
+
+	public String getsSection() {
+		return sSection;
+	}
+
+	public void setsSection(String sSection) {
+		this.sSection = sSection;
+	}
+
+	public String getsRollNo() {
+		return sRollNo;
+	}
+
+	public void setsRollNo(String sRollNo) {
+		this.sRollNo = sRollNo;
+	}
+
+	public Timestamp getsAdmissionDate() {
+		return sAdmissionDate;
+	}
+
+	public void setsAdmissionDate(Timestamp sAdmissionDate) {
+		this.sAdmissionDate = sAdmissionDate;
+	}
+
+	public Religion getsReligion() {
+		return sReligion;
+	}
+
+	public void setsReligion(Religion sReligion) {
+		this.sReligion = sReligion;
+	}
+
+	public String getsAdmissionNumber() {
+		return sAdmissionNumber;
+	}
+
+	public void setsAdmissionNumber(String sAdmissionNumber) {
+		this.sAdmissionNumber = sAdmissionNumber;
+	}
+
+	public Nationality getsNationality() {
+		return sNationality;
+	}
+
+	public void setsNationality(Nationality sNationality) {
+		this.sNationality = sNationality;
 	}
 
 	public List<String> getIdentificationMarks() {
 		return identificationMarks;
 	}
 
-	public List<Address> getAddress() {
-		return address;
+	public void setIdentificationMarks(List<String> identificationMarks) {
+		this.identificationMarks = identificationMarks;
+	}
+
+	public List<Address> getsAddress() {
+		return sAddress;
+	}
+
+	public void setsAddress(List<Address> sAddress) {
+		this.sAddress = sAddress;
 	}
 
 	public ParentGuardian getParentDetails() {
 		return parentDetails;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public void setFatherName(String fatherName) {
-		this.fatherName = fatherName;
-	}
-
-	public void setMotherName(String motherName) {
-		this.motherName = motherName;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
-	public void setClassType(String classType) {
-		this.classType = classType;
-	}
-
-	public void setSection(String section) {
-		this.section = section;
-	}
-
-	public void setRollNo(String rollNo) {
-		this.rollNo = rollNo;
-	}
-
-	public void setAdmissionDate(Date admissionDate) {
-		this.admissionDate = admissionDate;
-	}
-
-	public void setReligion(Religion religion) {
-		this.religion = religion;
-	}
-
-	public void setAdmissionNumber(String admissionNumber) {
-		this.admissionNumber = admissionNumber;
-	}
-
-	public void setNationality(Nationality nationality) {
-		this.nationality = nationality;
-	}
-
-	public void setIdentificationMarks(List<String> identificationMarks) {
-		this.identificationMarks = identificationMarks;
-	}
-
-	public void setAddress(List<Address> address) {
-		this.address = address;
-	}
-
 	public void setParentDetails(ParentGuardian parentDetails) {
 		this.parentDetails = parentDetails;
 	}
+
 }

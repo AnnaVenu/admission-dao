@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EntityScan("com.student.admission.admissiondao.entity")
 @ComponentScan(basePackages = "com.student.admission.admissiondao")
-//@EnableJpaRepositories("com.delivery.repository")
+/*@EnableJpaRepositories("com.student.admission.admissiondao.repository")*/
 /*@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })*/
 public class AdmissionDaoApplication extends SpringBootServletInitializer {
 
