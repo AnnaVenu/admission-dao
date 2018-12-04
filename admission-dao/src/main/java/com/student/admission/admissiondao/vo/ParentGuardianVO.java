@@ -1,5 +1,6 @@
 package com.student.admission.admissiondao.vo;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class ParentGuardianVO {
 	@JsonProperty("pGender")
 	private String pGender;
 	@JsonProperty("pDob")
-	private String pDob;
+	private Timestamp pDob;
 	@JsonProperty("pContactDetails")
 	private String pContactDetails;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -30,7 +31,7 @@ public class ParentGuardianVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, String pDob, String pContactDetails,
+	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, Timestamp pDob, String pContactDetails,
 			Map<String, Object> additionalProperties) {
 		super();
 		this.pFirstName = pFirstName;
@@ -72,12 +73,12 @@ public class ParentGuardianVO {
 	}
 
 	@JsonProperty("pDob")
-	public String getpDob() {
+	public Timestamp getpDob() {
 		return pDob;
 	}
 
 	@JsonProperty("pDob")
-	public void setpDob(String pDob) {
+	public void setpDob(Timestamp pDob) {
 		this.pDob = pDob;
 	}
 

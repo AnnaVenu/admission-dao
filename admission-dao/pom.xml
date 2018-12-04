@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -70,12 +71,12 @@
 			<version>1.2.0.Final</version>
 			<scope>provided</scope>
 		</dependency>
-		 <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.16.8</version>
-        <scope>provided</scope>
-    </dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.8</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -92,9 +93,9 @@
 				<configuration>
 					<source>1.6</source> <!-- or higher, depending on your project -->
 					<target>1.6</target> <!-- or higher, depending on your project -->
-					<defaultOutputDirectory>
+					<!-- <defaultOutputDirectory>
 						${project.build.directory}/generated-sources
-					</defaultOutputDirectory>
+					</defaultOutputDirectory> -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.mapstruct</groupId>
@@ -104,7 +105,7 @@
 					</annotationProcessorPaths>
 					<!-- <includes> <include>lib/*.jar</include> </includes> -->
 				</configuration>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<id>process</id>
 						<phase>generated-sources</phase>
@@ -112,7 +113,7 @@
 							<goal>process</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 
 		</plugins>
