@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "pFirstName", "pLastName", "pGender", "pdob", "pContactDetails" })
+@JsonPropertyOrder({ "pFirstName", "pLastName", "pGender", "pDob", "pContactDetails" })
 public class ParentGuardianVO {
 
 	@JsonProperty("pFirstName")
@@ -18,8 +18,8 @@ public class ParentGuardianVO {
 	private String pLastName;
 	@JsonProperty("pGender")
 	private String pGender;
-	@JsonProperty("pdob")
-	private String pdob;
+	@JsonProperty("pDob")
+	private String pDob;
 	@JsonProperty("pContactDetails")
 	private String pContactDetails;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -30,14 +30,13 @@ public class ParentGuardianVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, String pdob, String pContactDetails,
+	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, String pDob, String pContactDetails,
 			Map<String, Object> additionalProperties) {
 		super();
 		this.pFirstName = pFirstName;
 		this.pLastName = pLastName;
 		this.pGender = pGender;
-		this.pdob = pdob;
+		this.pDob = pDob;
 		this.pContactDetails = pContactDetails;
 		this.additionalProperties = additionalProperties;
 	}
@@ -72,14 +71,14 @@ public class ParentGuardianVO {
 		this.pGender = pGender;
 	}
 
-	@JsonProperty("pdob")
-	public String getPdob() {
-		return pdob;
+	@JsonProperty("pDob")
+	public String getpDob() {
+		return pDob;
 	}
 
-	@JsonProperty("pdob")
-	public void setPdob(String pdob) {
-		this.pdob = pdob;
+	@JsonProperty("pDob")
+	public void setpDob(String pDob) {
+		this.pDob = pDob;
 	}
 
 	@JsonAnyGetter

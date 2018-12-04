@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 		"sAddress", "parentDetails" })
 public class StudentVO implements Serializable {
 
-	
 	@JsonProperty("sid")
 	private int sid;
 	@JsonProperty("sFirstName")
@@ -288,15 +287,28 @@ public class StudentVO implements Serializable {
 		this.additionalProperties.put(name, value);
 	}
 
+	@Override
+	public String toString() {
+		return "StudentVO [sid=" + sid + ", sFirstName=" + sFirstName + ", sLastName=" + sLastName + ", sFatherName="
+				+ sFatherName + ", sMotherName=" + sMotherName + ", sGender=" + sGender + ", sDob=" + sDob
+				+ ", sClassType=" + sClassType + ", sSection=" + sSection + ", sRollNo=" + sRollNo + ", sAdmissionDate="
+				+ sAdmissionDate + ", sReligion=" + sReligion + ", sAdmissionNumber=" + sAdmissionNumber
+				+ ", sNationality=" + sNationality + ", identificationMarks=" + identificationMarks + ", sAddress="
+				+ sAddress + ", parentDetails=" + parentDetails + ", additionalProperties=" + additionalProperties
+				+ "]";
+	}
+
 	/*@Override
 	public String toString() {
-		return new ToStringBuilder(this).append("id", id).append("firstName", firstName).append("lastName", lastName)
-				.append("fatherName", fatherName).append("motherName", motherName).append("gender", gender)
-				.append("dob", dob).append("classType", classType).append("section", section).append("rollNo", rollNo)
-				.append("admissionDate", admissionDate).append("religion", religion)
-				.append("admissionNumber", admissionNumber).append("nationality", nationality)
-				.append("identificationMarks", identificationMarks).append("address", address)
+		return new ToStringBuilder(this).append("sid", sid).append("sFirstName", sFirstName)
+				.append("sLastName", sLastName).append("sFatherName", sFatherName).append("sMotherName", sMotherName)
+				.append("sGender", sGender).append("sDob", sDob).append("sClassType", sClassType)
+				.append("sAdmissionDate", sAdmissionDate).append("sRollNo", sRollNo)
+				.append("sAdmissionDate", sAdmissionDate).append("sReligion", sReligion)
+				.append("sAdmissionNumber", sAdmissionNumber).append("nationality", sNationality)
+				.append("identificationMarks", identificationMarks).append("sAddress", sAddress)
 				.append("parentDetails", parentDetails).append("additionalProperties", additionalProperties).toString();
 	}*/
+	
 
 }

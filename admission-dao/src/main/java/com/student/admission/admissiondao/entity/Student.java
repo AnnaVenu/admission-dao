@@ -68,7 +68,7 @@ public class Student {
 			@AttributeOverride(column = @Column(name = "P_PARENT_DOB"), name = "pDob"),
 			@AttributeOverride(column = @Column(name = "P_CONTACT_DETAILS"), name = "pContactDetails") })
 	private ParentGuardian parentDetails;
-
+	
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub

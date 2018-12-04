@@ -27,8 +27,12 @@ public interface StudentMapper {
 			@Mapping(target = "sReligion", source = "studentVO.sReligion"),
 			@Mapping(target = "sAdmissionNumber", source = "studentVO.sAdmissionNumber"),
 			@Mapping(target = "sNationality", source = "studentVO.sNationality"),
-			@Mapping(target = "parentDetails", expression = "java(studentVO.getParentDetails())"),//.toString()
-			@Mapping(target = "sAddress" , source="studentVO.sAddress"),
+			@Mapping(target = "parentDetails.pFirstName", expression = "java((studentVO.getParentDetails().getpFirstName()))"),
+			@Mapping(target = "parentDetails.pLastName", expression = "java((studentVO.getParentDetails().getpLastName()))"),
+			@Mapping(target = "parentDetails.pGender", expression = "java((studentVO.getParentDetails().getpGender()))"),
+			@Mapping(target = "parentDetails.pDob", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.stringToDateConverter(studentVO.getParentDetails().getpDob()))"),
+			@Mapping(target = "parentDetails.pContactDetails", expression = "java((studentVO.getParentDetails().pContactDetails()))"),//.toString()
+			@Mapping(target = "sAddress" , source="studentVO.sAddress"),               
 			@Mapping(target = "identificationMarks" , source="studentVO.identificationMarks")
 	
 			// List of String identification and address &parent class details
