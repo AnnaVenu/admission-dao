@@ -30,7 +30,7 @@ public class Address {
 	private String zipCode;
 	@ManyToOne
 	@JoinColumn(name = "ID", nullable = false)
-	private Student student;
+	private Student studentMap;
 
 	public Address() {
 		super();
@@ -38,7 +38,7 @@ public class Address {
 	}
 
 	public Address(int id, String doorNumber, String streetName, String district, String state, String zipCode,
-			Student student) {
+			Student studentMap) {
 		super();
 		this.id = id;
 		this.doorNumber = doorNumber;
@@ -46,7 +46,7 @@ public class Address {
 		this.district = district;
 		this.state = state;
 		this.zipCode = zipCode;
-		this.student = student;
+		this.studentMap = studentMap;
 	}
 
 	public int getId() {
@@ -73,10 +73,6 @@ public class Address {
 		return zipCode;
 	}
 
-	public Student getStudent() {
-		return student;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -101,7 +97,12 @@ public class Address {
 		this.zipCode = zipCode;
 	}
 
-	public void setStudent(Student student) {
-		this.student = student;
+	public Student getStudentMap() {
+		return studentMap;
 	}
+
+	public void setStudentMap(Student studentMap) {
+		this.studentMap = studentMap;
+	}
+
 }

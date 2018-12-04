@@ -58,7 +58,7 @@ public class Student {
 	private Nationality sNationality;
 	@ElementCollection(targetClass = String.class)
 	private List<String> identificationMarks;
-	@OneToMany(mappedBy = "student")
+	@OneToMany(mappedBy = "studentMap")
 	private List<Address> sAddress;
 	@Embedded
 	@Basic(optional = true)
