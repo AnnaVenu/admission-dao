@@ -1,6 +1,7 @@
 package com.student.admission.admissiondao.vo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,9 +48,9 @@ public class StudentVO implements Serializable {
 	@JsonProperty("sNationality")
 	private String sNationality;
 	@JsonProperty("identificationMarks")
-	private List<String> identificationMarks = null;
+	private List<String> identificationMarks = new ArrayList<String>();
 	@JsonProperty("sAddress")
-	private List<AddressVO> sAddress = null;
+	private List<AddressVO> sAddress = new ArrayList<AddressVO>();
 	@JsonProperty("parentDetails")
 	private ParentGuardianVO parentDetails = null;
 	@JsonIgnore
@@ -82,6 +83,13 @@ public class StudentVO implements Serializable {
 	 * @param firstName
 	 * @param fatherName
 	 */
+	
+
+	@JsonProperty("sid")
+	public int getSid() {
+		return sid;
+	}
+
 	public StudentVO(int sid, String sFirstName, String sLastName, String sFatherName, String sMotherName,
 			String sGender, String sDob, String sClassType, String sSection, String sRollNo, String sAdmissionDate,
 			String sReligion, String sAdmissionNumber, String sNationality, List<String> identificationMarks,
@@ -105,11 +113,6 @@ public class StudentVO implements Serializable {
 		this.sAddress = sAddress;
 		this.parentDetails = parentDetails;
 		this.additionalProperties = additionalProperties;
-	}
-
-	@JsonProperty("sid")
-	public int getSid() {
-		return sid;
 	}
 
 	@JsonProperty("sid")
@@ -252,14 +255,14 @@ public class StudentVO implements Serializable {
 		return identificationMarks;
 	}
 
-	@JsonProperty("identificationMarks")
-	public void setIdentificationMarks(List<String> identificationMarks) {
-		this.identificationMarks = identificationMarks;
-	}
-
 	@JsonProperty("sAddress")
 	public List<AddressVO> getsAddress() {
 		return sAddress;
+	}
+
+	@JsonProperty("identificationMarks")
+	public void setIdentificationMarks(List<String> identificationMarks) {
+		this.identificationMarks = identificationMarks;
 	}
 
 	@JsonProperty("sAddress")
@@ -298,17 +301,19 @@ public class StudentVO implements Serializable {
 				+ "]";
 	}
 
-	/*@Override
-	public String toString() {
-		return new ToStringBuilder(this).append("sid", sid).append("sFirstName", sFirstName)
-				.append("sLastName", sLastName).append("sFatherName", sFatherName).append("sMotherName", sMotherName)
-				.append("sGender", sGender).append("sDob", sDob).append("sClassType", sClassType)
-				.append("sAdmissionDate", sAdmissionDate).append("sRollNo", sRollNo)
-				.append("sAdmissionDate", sAdmissionDate).append("sReligion", sReligion)
-				.append("sAdmissionNumber", sAdmissionNumber).append("nationality", sNationality)
-				.append("identificationMarks", identificationMarks).append("sAddress", sAddress)
-				.append("parentDetails", parentDetails).append("additionalProperties", additionalProperties).toString();
-	}*/
-	
+	/*
+	 * @Override public String toString() { return new
+	 * ToStringBuilder(this).append("sid", sid).append("sFirstName", sFirstName)
+	 * .append("sLastName", sLastName).append("sFatherName",
+	 * sFatherName).append("sMotherName", sMotherName) .append("sGender",
+	 * sGender).append("sDob", sDob).append("sClassType", sClassType)
+	 * .append("sAdmissionDate", sAdmissionDate).append("sRollNo", sRollNo)
+	 * .append("sAdmissionDate", sAdmissionDate).append("sReligion", sReligion)
+	 * .append("sAdmissionNumber", sAdmissionNumber).append("nationality",
+	 * sNationality) .append("identificationMarks",
+	 * identificationMarks).append("sAddress", sAddress) .append("parentDetails",
+	 * parentDetails).append("additionalProperties",
+	 * additionalProperties).toString(); }
+	 */
 
 }

@@ -7,12 +7,14 @@ import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,9 +23,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "STUDENT")
-public class Student implements Serializable{
+public class Student implements Serializable {
 
-	
 	/**
 	 * 
 	 */
@@ -63,17 +64,20 @@ public class Student implements Serializable{
 	private Nationality sNationality;
 	@ElementCollection(targetClass = String.class)
 	private List<String> identificationMarks;
-	@OneToMany(mappedBy = "studentMap")
+	@OneToMany(mappedBy = "studentMap", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	/* @JoinColumn(name = "AID") */
 	private List<Address> sAddress;
 	@Embedded
 	@Basic(optional = true)
 	@AttributeOverrides({ @AttributeOverride(column = @Column(name = "P_FIRSTNAME"), name = "pFirstName"),
 			@AttributeOverride(column = @Column(name = "P_LASTNAME"), name = "pLastName"),
-			 @AttributeOverride(column = @Column(name = "P_GENDER"), name = "pGender"), 
-			/*@AttributeOverride(column = @Column(name = "P_PARENT_DOB"), name = "pDob"),*/
+			@AttributeOverride(column = @Column(name = "P_GENDER"), name = "pGender"),
+			/*
+			 * @AttributeOverride(column = @Column(name = "P_PARENT_DOB"), name = "pDob"),
+			 */
 			@AttributeOverride(column = @Column(name = "P_CONTACT_DETAILS"), name = "pContactDetails") })
 	private ParentGuardian parentDetails;
-	
+
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub

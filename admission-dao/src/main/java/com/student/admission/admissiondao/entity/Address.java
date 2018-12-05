@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,9 +14,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ADDRESS")
-public class Address implements Serializable{
+public class Address implements Serializable {
 
-	
 	/**
 	 * 
 	 */
@@ -34,8 +34,8 @@ public class Address implements Serializable{
 	private String state;
 	@Column(name = "ZIPCODE")
 	private String zipCode;
-	@ManyToOne
-	@JoinColumn(name = "ID", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "S_ID")
 	private Student studentMap;
 
 	public Address() {
@@ -110,5 +110,4 @@ public class Address implements Serializable{
 	public void setStudentMap(Student studentMap) {
 		this.studentMap = studentMap;
 	}
-
 }

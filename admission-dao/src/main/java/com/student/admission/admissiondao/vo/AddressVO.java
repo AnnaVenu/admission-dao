@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+
 /*import org.apache.commons.lang.builder.ToStringBuilder;*/
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,6 +30,8 @@ public class AddressVO implements Serializable {
 	private String state;
 	@JsonProperty("zipCode")
 	private String zipCode;
+	/*@JsonAnySetter
+	private StudentVO studentVO;*/
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	private final static long serialVersionUID = -9122331056376108934L;
@@ -129,11 +133,12 @@ public class AddressVO implements Serializable {
 		this.additionalProperties.put(name, value);
 	}
 
-	/*@Override
-	public String toString() {
-		return new ToStringBuilder(this).append("id", id).append("doorNumber", doorNumber)
-				.append("streetName", streetName).append("district", district).append("state", state)
-				.append("zipCode", zipCode).append("additionalProperties", additionalProperties).toString();
-	}*/
+	/*
+	 * @Override public String toString() { return new
+	 * ToStringBuilder(this).append("id", id).append("doorNumber", doorNumber)
+	 * .append("streetName", streetName).append("district",
+	 * district).append("state", state) .append("zipCode",
+	 * zipCode).append("additionalProperties", additionalProperties).toString(); }
+	 */
 
 }

@@ -26,7 +26,7 @@ public class PersistenceJPAConfig {
 		dataSource.setDriverClassName("org.h2.Driver");
 		/* dataSource.setUrl("jdbc:h2:~/testdb;DB_CLOSE_ON_EXIT=FALSE"); */
 		/* dataSource.setUrl("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1"); */
-		dataSource.setUrl("jdbc:h2:~/student;DB_CLOSE_DELAY=-1");
+		dataSource.setUrl("jdbc:h2:~/studentDBNew3;DB_CLOSE_DELAY=-1");
 		dataSource.setUsername("venu");
 		dataSource.setPassword("venu");
 		return dataSource;
