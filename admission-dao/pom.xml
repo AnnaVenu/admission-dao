@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.2.10.Final</version>
+			<version>5.2.10.Final</version><!--$NO-MVN-MAN-VER$-->
 			<scope>runtime</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
@@ -74,7 +74,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.8</version>
+			<version>1.16.8</version><!--$NO-MVN-MAN-VER$-->
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -89,7 +89,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
+				<version>3.5.1</version><!--$NO-MVN-MAN-VER$-->
 				<configuration>
 					<source>1.6</source> <!-- or higher, depending on your project -->
 					<target>1.6</target> <!-- or higher, depending on your project -->

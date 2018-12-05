@@ -1,5 +1,6 @@
 package com.student.admission.admissiondao.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -20,9 +21,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "STUDENT")
-public class Student {
+public class Student implements Serializable{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "S_ID")
@@ -65,7 +70,7 @@ public class Student {
 	@AttributeOverrides({ @AttributeOverride(column = @Column(name = "P_FIRSTNAME"), name = "pFirstName"),
 			@AttributeOverride(column = @Column(name = "P_LASTNAME"), name = "pLastName"),
 			 @AttributeOverride(column = @Column(name = "P_GENDER"), name = "pGender"), 
-			@AttributeOverride(column = @Column(name = "P_PARENT_DOB"), name = "pDob"),
+			/*@AttributeOverride(column = @Column(name = "P_PARENT_DOB"), name = "pDob"),*/
 			@AttributeOverride(column = @Column(name = "P_CONTACT_DETAILS"), name = "pContactDetails") })
 	private ParentGuardian parentDetails;
 	

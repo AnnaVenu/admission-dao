@@ -1,6 +1,6 @@
 package com.student.admission.admissiondao.entity;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -8,9 +8,12 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Embeddable
-public class ParentGuardian {
+public class ParentGuardian implements Serializable {
 
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Column(name = "P_FIRSTNAME")
 	private String pFirstName;
 	@Column(name = "P_LASTNAME")
@@ -18,8 +21,8 @@ public class ParentGuardian {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "P_GENDER")
 	private Gender pGender;
-	@Column(name = "P_PARENT_DOB")
-	private Timestamp pDob;
+	/*@Column(name = "P_PARENT_DOB")
+	private String pDob;*/
 	@Column(name = "P_CONTACT_DETAILS")
 	private String pContactDetails;
 
@@ -28,12 +31,12 @@ public class ParentGuardian {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ParentGuardian(String pFirstName, String pLastName, Gender pGender, Timestamp pDob, String pContactDetails) {
+	public ParentGuardian(String pFirstName, String pLastName, Gender pGender, String pContactDetails) {
 		super();
 		this.pFirstName = pFirstName;
 		this.pLastName = pLastName;
-		this.pGender = pGender;
-		this.pDob = pDob;
+		/*this.pGender = pGender;
+		this.pDob = pDob;*/
 		this.pContactDetails = pContactDetails;
 	}
 
@@ -61,14 +64,6 @@ public class ParentGuardian {
 		this.pGender = pGender;
 	}
 
-	public Timestamp getpDob() {
-		return pDob;
-	}
-
-	public void setpDob(Timestamp pDob) {
-		this.pDob = pDob;
-	}
-
 	public String getpContactDetails() {
 		return pContactDetails;
 	}
@@ -76,5 +71,13 @@ public class ParentGuardian {
 	public void setpContactDetails(String pContactDetails) {
 		this.pContactDetails = pContactDetails;
 	}
+
+	/*public String getpDob() {
+		return pDob;
+	}
+
+	public void setpDob(String pDob) {
+		this.pDob = pDob;
+	}*/
 
 }

@@ -1,6 +1,6 @@
 package com.student.admission.admissiondao.vo;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "pFirstName", "pLastName", "pGender", "pDob", "pContactDetails" })
-public class ParentGuardianVO {
+public class ParentGuardianVO implements Serializable {
 
 	@JsonProperty("pFirstName")
 	private String pFirstName;
@@ -19,25 +19,25 @@ public class ParentGuardianVO {
 	private String pLastName;
 	@JsonProperty("pGender")
 	private String pGender;
-	@JsonProperty("pDob")
-	private Timestamp pDob;
+	/*@JsonProperty("pDob")
+	private String pDob;*/
 	@JsonProperty("pContactDetails")
 	private String pContactDetails;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-	@SuppressWarnings("unused")
+
 	private final static long serialVersionUID = -91223310563708934L;
 
 	public ParentGuardianVO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, Timestamp pDob, String pContactDetails,
+	public ParentGuardianVO(String pFirstName, String pLastName, String pGender, String pContactDetails,
 			Map<String, Object> additionalProperties) {
 		super();
 		this.pFirstName = pFirstName;
 		this.pLastName = pLastName;
 		this.pGender = pGender;
-		this.pDob = pDob;
+		/*this.pDob = pDob;*/
 		this.pContactDetails = pContactDetails;
 		this.additionalProperties = additionalProperties;
 	}
@@ -72,15 +72,15 @@ public class ParentGuardianVO {
 		this.pGender = pGender;
 	}
 
-	@JsonProperty("pDob")
-	public Timestamp getpDob() {
+	/*@JsonProperty("pDob")
+	public String getpDob() {
 		return pDob;
 	}
 
 	@JsonProperty("pDob")
-	public void setpDob(Timestamp pDob) {
+	public void setpDob(String pDob) {
 		this.pDob = pDob;
-	}
+	}*/
 
 	@JsonAnyGetter
 	public Map<String, Object> getAdditionalProperties() {

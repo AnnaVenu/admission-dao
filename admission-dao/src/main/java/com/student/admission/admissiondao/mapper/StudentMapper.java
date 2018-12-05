@@ -27,25 +27,9 @@ public interface StudentMapper {
 			@Mapping(target = "sReligion", source = "studentVO.sReligion"),
 			@Mapping(target = "sAdmissionNumber", source = "studentVO.sAdmissionNumber"),
 			@Mapping(target = "sNationality", source = "studentVO.sNationality"),
-			/*
-			 * @Mapping(target = "parentDetails.pFirstName", expression =
-			 * "java((studentVO.getParentDetails().getpFirstName()))"),
-			 * 
-			 * @Mapping(target = "parentDetails.pLastName", expression =
-			 * "java((studentVO.getParentDetails().getpLastName()))"),
-			 * 
-			 * @Mapping(target = "parentDetails.pGender", expression =
-			 * "java((studentVO.getParentDetails().getpGender()))"),
-			 */
-			/*@Mapping(target = "parentDetails.pDob", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.stringToDateConverter(studentVO.getParentDetails(),parentDetails.getpDob()))"),*/
-			/*
-			 * @Mapping(target = "parentDetails.pContactDetails", expression =
-			 * "java((studentVO.getParentDetails().pContactDetails()))"),
-			 */ // .toString()
+			/*@Mapping(target = "parentDetails.pDob", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.stringToDateConverter(studentVO.getParentDetails().getpDob()))"),*/
 			@Mapping(target = "sAddress", source = "studentVO.sAddress"),
 			@Mapping(target = "identificationMarks", source = "studentVO.identificationMarks")
-
-			// List of String identification and address &parent class details
 
 	})
 	Student voToEntity(StudentVO studentVO);
@@ -64,24 +48,44 @@ public interface StudentMapper {
 			@Mapping(target = "sReligion", source = "student.sReligion"),
 			@Mapping(target = "sAdmissionNumber", source = "student.sAdmissionNumber"),
 			@Mapping(target = "sNationality", source = "student.sNationality"),
-			/*
-			 * @Mapping(target = "parentDetails.pFirstName", expression =
-			 * "java((student.getParentDetails().getpFirstName()))"),
-			 * 
-			 * @Mapping(target = "parentDetails.pLastName", expression =
-			 * "java((student.getParentDetails().getpLastName()))"),
-			 * 
-			 * @Mapping(target = "parentDetails.pGender", expression =
-			 * "java((student.getParentDetails().getpGender()))"),
-			 */
-			/*@Mapping(target = "parentDetails.pDob", source=),*/
-			/*
-			 * @Mapping(target = "parentDetails", expression =
-			 * "java((student.getParentDetails().pContactDetails()))"),
-			 */// .toString()
 			@Mapping(target = "sAddress", source = "student.sAddress"),
+			/*@Mapping(target="parentDetails.pDob" ,expression="java(com.student.admission.admissiondao.utils.DateConvertor.datetoStringConverter(student.getParentDetails().getpDob()))"),*/
 			@Mapping(target = "identificationMarks", source = "student.identificationMarks") })
 	StudentVO entityToVo(Student student);
 
 }
-/*expression = "java(com.student.admission.admissiondao.utils.DateConvertor.stringToDateConverter(studentVO.getParentDetails(),parentDetails.getpDob()))*/
+
+/*
+ * @Mapping(target = "parentDetails.pContactDetails", expression =
+ * "java((studentVO.getParentDetails().pContactDetails()))"),
+ */ // .toString()
+/*
+ * @Mapping(target = "parentDetails.pFirstName", expression =
+ * "java((studentVO.getParentDetails().getpFirstName()))"),
+ * 
+ * @Mapping(target = "parentDetails.pLastName", expression =
+ * "java((studentVO.getParentDetails().getpLastName()))"),
+ * 
+ * @Mapping(target = "parentDetails.pGender", expression =
+ * "java((studentVO.getParentDetails().getpGender()))"),
+ */
+
+/*
+ * @Mapping(target = "parentDetails.pFirstName", expression =
+ * "java((student.getParentDetails().getpFirstName()))"),
+ * 
+ * @Mapping(target = "parentDetails.pLastName", expression =
+ * "java((student.getParentDetails().getpLastName()))"),
+ * 
+ * @Mapping(target = "parentDetails.pGender", expression =
+ * "java((student.getParentDetails().getpGender()))"),
+ */
+/* @Mapping(target = "parentDetails.pDob", source=), */
+/*
+ * @Mapping(target = "parentDetails", expression =
+ * "java((student.getParentDetails().pContactDetails()))"),
+ */// .toString()
+/*
+ * expression = "java(com.student.admission.admissiondao.utils.DateConvertor.
+ * stringToDateConverter(studentVO.getParentDetails(),parentDetails.getpDob()))
+ */
