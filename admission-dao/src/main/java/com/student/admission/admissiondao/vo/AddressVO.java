@@ -11,15 +11,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-
 /*import org.apache.commons.lang.builder.ToStringBuilder;*/
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "doorNumber", "streetName", "district", "state", "zipCode" })
+@JsonPropertyOrder({ "id", "sRollNo", "doorNumber", "streetName", "district", "state", "zipCode" })
 public class AddressVO implements Serializable {
 
 	@JsonProperty("id")
 	private int id;
+	@JsonProperty("sRollNo")
+	private String sRollNo;
 	@JsonProperty("doorNumber")
 	private String doorNumber;
 	@JsonProperty("streetName")
@@ -30,8 +31,6 @@ public class AddressVO implements Serializable {
 	private String state;
 	@JsonProperty("zipCode")
 	private String zipCode;
-	/*@JsonAnySetter
-	private StudentVO studentVO;*/
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	private final static long serialVersionUID = -9122331056376108934L;
@@ -53,9 +52,11 @@ public class AddressVO implements Serializable {
 	 * @param district
 	 * @param doorNumber
 	 */
-	public AddressVO(int id, String doorNumber, String streetName, String district, String state, String zipCode) {
+	public AddressVO(int id, String sRollNo, String doorNumber, String streetName, String district, String state,
+			String zipCode) {
 		super();
 		this.id = id;
+		this.sRollNo = sRollNo;
 		this.doorNumber = doorNumber;
 		this.streetName = streetName;
 		this.district = district;
@@ -71,6 +72,16 @@ public class AddressVO implements Serializable {
 	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	@JsonProperty("sRollNo")
+	public String getsRollNo() {
+		return sRollNo;
+	}
+
+	@JsonProperty("sRollNo")
+	public void setsRollNo(String sRollNo) {
+		this.sRollNo = sRollNo;
 	}
 
 	@JsonProperty("doorNumber")
@@ -131,6 +142,13 @@ public class AddressVO implements Serializable {
 	@JsonAnySetter
 	public void setAdditionalProperty(String name, Object value) {
 		this.additionalProperties.put(name, value);
+	}
+
+	@Override
+	public String toString() {
+		return "AddressVO [id=" + id + ", sRollNo=" + sRollNo + ", doorNumber=" + doorNumber + ", streetName="
+				+ streetName + ", district=" + district + ", state=" + state + ", zipCode=" + zipCode
+				+ ", additionalProperties=" + additionalProperties + "]";
 	}
 
 	/*

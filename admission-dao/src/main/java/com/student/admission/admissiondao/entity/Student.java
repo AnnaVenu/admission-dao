@@ -7,34 +7,38 @@ import java.util.List;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 @Entity
 @Table(name = "STUDENT")
+@DynamicUpdate
 public class Student implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
+
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "S_ID")
 	private int sid;
 	@Column(name = "S_FIRSTNAME")
 	private String sFirstName;
+	@Id
+	@Column(name = "S_ROLLNO")
+	private String sRollNo;
 	@Column(name = "S_LASTNAME")
 	private String sLastName;
 	@Column(name = "S_FATHERNAME")
@@ -50,8 +54,6 @@ public class Student implements Serializable {
 	private String sClassType;
 	@Column(name = "S_SECTION")
 	private String sSection;
-	@Column(name = "S_ROLLNO")
-	private String sRollNo;
 	@Column(name = "S_ADMISSION_DATE")
 	private Timestamp sAdmissionDate;
 	@Enumerated(EnumType.STRING)
@@ -64,8 +66,7 @@ public class Student implements Serializable {
 	private Nationality sNationality;
 	@ElementCollection(targetClass = String.class)
 	private List<String> identificationMarks;
-	@OneToMany(mappedBy = "studentMap", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	/* @JoinColumn(name = "AID") */
+	@OneToMany(mappedBy = "studentMap")
 	private List<Address> sAddress;
 	@Embedded
 	@Basic(optional = true)

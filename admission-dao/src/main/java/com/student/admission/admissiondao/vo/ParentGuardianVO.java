@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "pFirstName", "pLastName", "pGender", "pDob", "pContactDetails" })
+@JsonPropertyOrder({ "pFirstName", "pLastName", "pGender", "pContactDetails" })
 public class ParentGuardianVO implements Serializable {
 
 	@JsonProperty("pFirstName")
@@ -19,8 +19,9 @@ public class ParentGuardianVO implements Serializable {
 	private String pLastName;
 	@JsonProperty("pGender")
 	private String pGender;
-	/*@JsonProperty("pDob")
-	private String pDob;*/
+	/*
+	 * @JsonProperty("pDob") private String pDob;
+	 */
 	@JsonProperty("pContactDetails")
 	private String pContactDetails;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -37,7 +38,7 @@ public class ParentGuardianVO implements Serializable {
 		this.pFirstName = pFirstName;
 		this.pLastName = pLastName;
 		this.pGender = pGender;
-		/*this.pDob = pDob;*/
+		/* this.pDob = pDob; */
 		this.pContactDetails = pContactDetails;
 		this.additionalProperties = additionalProperties;
 	}
@@ -72,15 +73,11 @@ public class ParentGuardianVO implements Serializable {
 		this.pGender = pGender;
 	}
 
-	/*@JsonProperty("pDob")
-	public String getpDob() {
-		return pDob;
-	}
-
-	@JsonProperty("pDob")
-	public void setpDob(String pDob) {
-		this.pDob = pDob;
-	}*/
+	/*
+	 * @JsonProperty("pDob") public String getpDob() { return pDob; }
+	 * 
+	 * @JsonProperty("pDob") public void setpDob(String pDob) { this.pDob = pDob; }
+	 */
 
 	@JsonAnyGetter
 	public Map<String, Object> getAdditionalProperties() {
@@ -101,4 +98,11 @@ public class ParentGuardianVO implements Serializable {
 	public void setAdditionalProperties(Map<String, Object> additionalProperties) {
 		this.additionalProperties = additionalProperties;
 	}
+
+	@Override
+	public String toString() {
+		return "ParentGuardianVO [pFirstName=" + pFirstName + ", pLastName=" + pLastName + ", pGender=" + pGender
+				+ ", pContactDetails=" + pContactDetails + ", additionalProperties=" + additionalProperties + "]";
+	}
+
 }

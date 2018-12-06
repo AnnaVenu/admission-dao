@@ -2,31 +2,29 @@ package com.student.admission.admissiondao.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.student.admission.admissiondao.entity.Student;
-import com.student.admission.admissiondao.mapper.StudentMapper;
+import com.student.admission.admissiondao.mapper.AdminDAOMapper;
 import com.student.admission.admissiondao.repository.StudentRepository;
 import com.student.admission.admissiondao.vo.StudentVO;
 
 @Service
+@EnableTransactionManagement
 public class StudentServiceImpl implements StudentService {
-
-	@Autowired
-	StudentMapper studentMapper;
-
-	/*
-	 * public StudentServiceImpl() { // TODO Auto-generated constructor stub
-	 * studentMapper = Mappers.getMapper(StudentMapper.class); }
-	 */
 
 	@Autowired
 	StudentRepository studentRepository;
 
+	@Autowired
+	AdminDAOMapper adminDAOMapper;
+
 	@Override
 	public StudentVO saveStudentDetails(StudentVO studentVO) {
-		Student studentEntity = studentMapper.voToEntity(studentVO);
-		Student studentResponseObject = studentRepository.save(studentEntity);
-		StudentVO studentResponseVo = studentMapper.entityToVo(studentResponseObject);
-		return studentResponseVo;
+		Student studentEntity = adminDAOMapper.voToEntity(studentVO);
+		Student studentDbEntity = studentRepository.save(studentEntity);
+		StudentVO responseObject = adminDAOMapper.entityToVo(studentDbEntity);
+		return responseObject;
 	}
+
 }

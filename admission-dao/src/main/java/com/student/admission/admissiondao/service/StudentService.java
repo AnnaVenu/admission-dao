@@ -5,4 +5,5 @@ import com.student.admission.admissiondao.vo.StudentVO;
 public interface StudentService {
 
 	StudentVO saveStudentDetails(StudentVO studentVO);
+
 }

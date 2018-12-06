@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,8 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 @Entity
 @Table(name = "ADDRESS")
+@DynamicUpdate
 public class Address implements Serializable {
 
 	/**
@@ -24,6 +26,8 @@ public class Address implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "AID")
 	private int id;
+	@Column(name = "S_ROLLNO", insertable = false, updatable = false)
+	private String sRollNo;
 	@Column(name = "DOOR_NUMBER")
 	private String doorNumber;
 	@Column(name = "STREET_NAME")
@@ -34,8 +38,8 @@ public class Address implements Serializable {
 	private String state;
 	@Column(name = "ZIPCODE")
 	private String zipCode;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "S_ID")
+	@ManyToOne
+	@JoinColumn(name = "S_ROLLNO", referencedColumnName = "S_ROLLNO")
 	private Student studentMap;
 
 	public Address() {
@@ -43,10 +47,11 @@ public class Address implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(int id, String doorNumber, String streetName, String district, String state, String zipCode,
-			Student studentMap) {
+	public Address(int id, String sRollNo, String doorNumber, String streetName, String district, String state,
+			String zipCode, Student studentMap) {
 		super();
 		this.id = id;
+		this.sRollNo = sRollNo;
 		this.doorNumber = doorNumber;
 		this.streetName = streetName;
 		this.district = district;
@@ -81,6 +86,14 @@ public class Address implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getsRollNo() {
+		return sRollNo;
+	}
+
+	public void setsRollNo(String sRollNo) {
+		this.sRollNo = sRollNo;
 	}
 
 	public void setDoorNumber(String doorNumber) {

@@ -49,8 +49,6 @@ public class StudentVO implements Serializable {
 	private String sNationality;
 	@JsonProperty("identificationMarks")
 	private List<String> identificationMarks = new ArrayList<String>();
-	@JsonProperty("sAddress")
-	private List<AddressVO> sAddress = new ArrayList<AddressVO>();
 	@JsonProperty("parentDetails")
 	private ParentGuardianVO parentDetails = null;
 	@JsonIgnore
@@ -83,7 +81,6 @@ public class StudentVO implements Serializable {
 	 * @param firstName
 	 * @param fatherName
 	 */
-	
 
 	@JsonProperty("sid")
 	public int getSid() {
@@ -93,7 +90,7 @@ public class StudentVO implements Serializable {
 	public StudentVO(int sid, String sFirstName, String sLastName, String sFatherName, String sMotherName,
 			String sGender, String sDob, String sClassType, String sSection, String sRollNo, String sAdmissionDate,
 			String sReligion, String sAdmissionNumber, String sNationality, List<String> identificationMarks,
-			List<AddressVO> sAddress, ParentGuardianVO parentDetails, Map<String, Object> additionalProperties) {
+			ParentGuardianVO parentDetails, Map<String, Object> additionalProperties) {
 		super();
 		this.sid = sid;
 		this.sFirstName = sFirstName;
@@ -110,7 +107,6 @@ public class StudentVO implements Serializable {
 		this.sAdmissionNumber = sAdmissionNumber;
 		this.sNationality = sNationality;
 		this.identificationMarks = identificationMarks;
-		this.sAddress = sAddress;
 		this.parentDetails = parentDetails;
 		this.additionalProperties = additionalProperties;
 	}
@@ -255,19 +251,9 @@ public class StudentVO implements Serializable {
 		return identificationMarks;
 	}
 
-	@JsonProperty("sAddress")
-	public List<AddressVO> getsAddress() {
-		return sAddress;
-	}
-
 	@JsonProperty("identificationMarks")
 	public void setIdentificationMarks(List<String> identificationMarks) {
 		this.identificationMarks = identificationMarks;
-	}
-
-	@JsonProperty("sAddress")
-	public void setsAddress(List<AddressVO> sAddress) {
-		this.sAddress = sAddress;
 	}
 
 	@JsonProperty("parentDetails")
@@ -296,9 +282,8 @@ public class StudentVO implements Serializable {
 				+ sFatherName + ", sMotherName=" + sMotherName + ", sGender=" + sGender + ", sDob=" + sDob
 				+ ", sClassType=" + sClassType + ", sSection=" + sSection + ", sRollNo=" + sRollNo + ", sAdmissionDate="
 				+ sAdmissionDate + ", sReligion=" + sReligion + ", sAdmissionNumber=" + sAdmissionNumber
-				+ ", sNationality=" + sNationality + ", identificationMarks=" + identificationMarks + ", sAddress="
-				+ sAddress + ", parentDetails=" + parentDetails + ", additionalProperties=" + additionalProperties
-				+ "]";
+				+ ", sNationality=" + sNationality + ", identificationMarks=" + identificationMarks + ", parentDetails="
+				+ parentDetails + ", additionalProperties=" + additionalProperties + "]";
 	}
 
 	/*

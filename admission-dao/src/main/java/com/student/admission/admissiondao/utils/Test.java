@@ -1,40 +1,39 @@
 package com.student.admission.admissiondao.utils;
 
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.student.admission.admissiondao.entity.Address;
 
 public class Test {
-	public static Timestamp stringToDateConverter(String str_date) {
-		String dt = "10-Jan-2017";
-		String pattern = "dd-MMM-yyyy";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-		Date date = null;
-		try {
-			date = simpleDateFormat.parse(dt);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		System.out.println("Date:" + date);
-		java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
-		System.out.println("Timestamp:" + timestamp.toInstant().toString());
-		return timestamp;
-	}
+	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException {
 
-	public static String datetoStringConverter(Timestamp timestamp) {
-		//Timestamp ts = 2017-01-09 18:30:00;
-		/*Date date = new Date();
-		date.setTime(timestamp.getTime());*/
-		String formattedDate = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(timestamp);
-		return formattedDate;
-		
-	}
+		ArrayList<Address> addressList = new ArrayList<Address>();
+		Address address = new Address();
+		address.setDistrict("KNR");
+		address.setDoorNumber("8-36");
+		address.setId(1);
+		address.setsRollNo("1234");
+		address.setState("TS");
+		address.setStreetName("PDPL");
+		address.setZipCode("505474");
+		addressList.add(address);
 
-	public static void main(String[] args) {
-		Test.datetoStringConverter(new Timestamp(4464));
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		System.out.println(timestamp);
-	}
+		Address address2 = new Address();
+		address2.setDistrict("KNR1");
+		address2.setDoorNumber("8-361");
+		address2.setId(11);
+		address2.setsRollNo("12314");
+		address2.setState("TS1");
+		address2.setStreetName("PDPL1");
+		address2.setZipCode("5054741");
+		addressList.add(address2);
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(new File("C:\\Users\\Venu\\Desktop\\result.json"), addressList);
 
+	}
 }
