@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -37,6 +39,7 @@ public class StudentVO implements Serializable {
 	private String sClassType;
 	@JsonProperty("sSection")
 	private String sSection;
+	@NotNull
 	@JsonProperty("sRollNo")
 	private String sRollNo;
 	@JsonProperty("sAdmissionDate")

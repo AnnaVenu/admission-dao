@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,6 +20,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({ "id", "sRollNo", "doorNumber", "streetName", "district", "state", "zipCode" })
 public class AddressVO implements Serializable {
 
+	@NotNull
+	@Valid
 	@JsonProperty("id")
 	private int id;
 	@JsonProperty("sRollNo")

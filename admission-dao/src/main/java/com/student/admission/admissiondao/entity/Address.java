@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,8 +24,14 @@ public class Address implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "AID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	/*
+	 * @SequenceGenerator(name = "native")
+	 * 
+	 * @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+	 */
+	/* @GenericGenerator(name = "native", strategy = "native") */
+	@Column(name = "AID", updatable = false, nullable = false)
 	private int id;
 	@Column(name = "S_ROLLNO", insertable = false, updatable = false)
 	private String sRollNo;
@@ -38,7 +45,7 @@ public class Address implements Serializable {
 	private String state;
 	@Column(name = "ZIPCODE")
 	private String zipCode;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "S_ROLLNO", referencedColumnName = "S_ROLLNO")
 	private Student studentMap;
 

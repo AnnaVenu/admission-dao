@@ -27,9 +27,19 @@ public interface AdminDAOMapper {
 			@Mapping(target = "sDob", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.datetoStringConverter(student.getsDob()))"),
 			@Mapping(target = "sAdmissionDate", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.datetoStringConverter(student.getsAdmissionDate()))") })
 	StudentVO entityToVo(Student student);
+	
+	@Mappings({
+		@Mapping(source="addressVO.sRollNo",target="studentMap.sRollNo"),
+		@Mapping(target="sRollNo",ignore=true)
+	})
+	Address addressVoToEntity(AddressVO addressVO);
 
 	List<Address> addressVoToEntity(List<AddressVO> addressVO);
 
 	List<AddressVO> addressEntityToVo(List<Address> address);
+
+	List<Student> listOfVoToEntity(List<StudentVO> liststudentVO);
+
+	List<StudentVO> listOfEntityToVo(List<Student> listStudent);
 
 }

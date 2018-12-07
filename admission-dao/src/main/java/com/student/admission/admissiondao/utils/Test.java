@@ -33,7 +33,7 @@ public class Test {
 		address2.setZipCode("5054741");
 		addressList.add(address2);
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.writeValue(new File("C:\\Users\\Venu\\Desktop\\result.json"), addressList);
+		mapper.writeValue(new File("C:\\Users\\693588\\Desktop\\result.json"), addressList);
 
 	}
 }

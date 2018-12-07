@@ -1,18 +1,8 @@
 package com.student.admission.admissiondao.mapper;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
-import org.mapstruct.ReportingPolicy;
-import org.mapstruct.factory.Mappers;
-
-import com.student.admission.admissiondao.entity.Student;
-import com.student.admission.admissiondao.vo.StudentVO;
-
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface StudentMapper {
 
-	public static StudentMapper STUDENT_MAPPER = Mappers.getMapper(StudentMapper.class);
+	/*public static StudentMapper STUDENT_MAPPER = Mappers.getMapper(StudentMapper.class);
 
 	@Mappings({ @Mapping(target = "sFirstName", source = "studentVO.sFirstName"),
 			@Mapping(target = "sLastName", source = "studentVO.sLastName"),
@@ -27,7 +17,7 @@ public interface StudentMapper {
 			@Mapping(target = "sReligion", source = "studentVO.sReligion"),
 			@Mapping(target = "sAdmissionNumber", source = "studentVO.sAdmissionNumber"),
 			@Mapping(target = "sNationality", source = "studentVO.sNationality"),
-			/*@Mapping(target = "parentDetails.pDob", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.stringToDateConverter(studentVO.getParentDetails().getpDob()))"),*/
+			@Mapping(target = "parentDetails.pDob", expression = "java(com.student.admission.admissiondao.utils.DateConvertor.stringToDateConverter(studentVO.getParentDetails().getpDob()))"),
 			@Mapping(target = "sAddress", source = "studentVO.sAddress"),
 			@Mapping(target = "identificationMarks", source = "studentVO.identificationMarks")
 
@@ -49,17 +39,17 @@ public interface StudentMapper {
 			@Mapping(target = "sAdmissionNumber", source = "student.sAdmissionNumber"),
 			@Mapping(target = "sNationality", source = "student.sNationality"),
 			@Mapping(target = "sAddress", source = "student.sAddress"),
-			/*@Mapping(target="parentDetails.pDob" ,expression="java(com.student.admission.admissiondao.utils.DateConvertor.datetoStringConverter(student.getParentDetails().getpDob()))"),*/
+			@Mapping(target="parentDetails.pDob" ,expression="java(com.student.admission.admissiondao.utils.DateConvertor.datetoStringConverter(student.getParentDetails().getpDob()))"),
 			@Mapping(target = "identificationMarks", source = "student.identificationMarks") })
 	StudentVO entityToVo(Student student);
 
 }
 
-/*
+
  * @Mapping(target = "parentDetails.pContactDetails", expression =
  * "java((studentVO.getParentDetails().pContactDetails()))"),
- */ // .toString()
-/*
+  // .toString()
+
  * @Mapping(target = "parentDetails.pFirstName", expression =
  * "java((studentVO.getParentDetails().getpFirstName()))"),
  * 
@@ -68,9 +58,9 @@ public interface StudentMapper {
  * 
  * @Mapping(target = "parentDetails.pGender", expression =
  * "java((studentVO.getParentDetails().getpGender()))"),
- */
+ 
 
-/*
+
  * @Mapping(target = "parentDetails.pFirstName", expression =
  * "java((student.getParentDetails().getpFirstName()))"),
  * 
@@ -79,13 +69,14 @@ public interface StudentMapper {
  * 
  * @Mapping(target = "parentDetails.pGender", expression =
  * "java((student.getParentDetails().getpGender()))"),
- */
-/* @Mapping(target = "parentDetails.pDob", source=), */
-/*
+ 
+ @Mapping(target = "parentDetails.pDob", source=), 
+
  * @Mapping(target = "parentDetails", expression =
  * "java((student.getParentDetails().pContactDetails()))"),
- */// .toString()
-/*
+ // .toString()
+
  * expression = "java(com.student.admission.admissiondao.utils.DateConvertor.
  * stringToDateConverter(studentVO.getParentDetails(),parentDetails.getpDob()))
  */
+}
