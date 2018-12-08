@@ -6,4 +6,6 @@ public interface StudentService {
 
 	StudentVO saveStudentDetails(StudentVO studentVO);
 
+	StudentVO getByRollNoStudentDetails(String sRollNo);
+
 }

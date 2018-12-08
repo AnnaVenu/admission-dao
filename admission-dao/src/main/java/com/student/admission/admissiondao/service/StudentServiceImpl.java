@@ -27,4 +27,11 @@ public class StudentServiceImpl implements StudentService {
 		return responseObject;
 	}
 
+	@Override
+	public StudentVO getByRollNoStudentDetails(String sRollNo) {
+     Student studentEntity = studentRepository.getByRollNo(sRollNo);
+     StudentVO studentVO = adminDAOMapper.entityToVo(studentEntity);
+		return studentVO;
+	}
+
 }
